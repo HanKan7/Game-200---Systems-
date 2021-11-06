@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 163700363}
   - component: {fileID: 163700362}
   m_Layer: 5
-  m_Name: ' Value'
+  m_Name: Hunger Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,9 +485,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Clean
-
-'
+  m_text: Clean Button
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -645,7 +643,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 324534266}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1433930065}
+        m_MethodName: playWithCat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &324534266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,7 +1024,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630331440
 GameObject:
@@ -1067,7 +1076,7 @@ GameObject:
   - component: {fileID: 644931161}
   - component: {fileID: 644931160}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: Day Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1089,7 +1098,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 17, y: 0}
+  m_AnchoredPosition: {x: 4, y: 0}
   m_SizeDelta: {x: 106.865234, y: 54.58539}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &644931160
@@ -2177,7 +2186,7 @@ GameObject:
   - component: {fileID: 1144682928}
   - component: {fileID: 1144682927}
   m_Layer: 5
-  m_Name: ' Value'
+  m_Name: Play Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2445,7 +2454,7 @@ GameObject:
   - component: {fileID: 1229970505}
   - component: {fileID: 1229970504}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: AP Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2836,13 +2845,68 @@ RectTransform:
   - {fileID: 1451377266}
   - {fileID: 228391475}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1433930064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1433930066}
+  - component: {fileID: 1433930065}
+  m_Layer: 0
+  m_Name: Game Tracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1433930065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433930064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e19dac761ef8f48b6a0a99abf0829b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  hunger: 10
+  cleanliness: 10
+  playMeter: 10
+  day: 1
+  actionPoints: 5
+  healthValueText: {fileID: 1081745411}
+  hungerValueText: {fileID: 163700362}
+  cleanlinessValueText: {fileID: 2051146531}
+  playMeterValueText: {fileID: 1144682927}
+  dayValueText: {fileID: 644931160}
+  actionPointsValueText: {fileID: 1229970504}
+--- !u!4 &1433930066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433930064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1451377265
 GameObject:
   m_ObjectHideFlags: 0
@@ -3064,7 +3128,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Play
+  m_text: 'Play Button
 
 '
   m_isRightToLeft: 0
@@ -3644,7 +3708,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1810586534}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1433930065}
+        m_MethodName: cleanCat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1810586534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3775,7 +3850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1847575194}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: Attributes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3860,7 +3935,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Feed
+  m_text: 'Feed Button
 
 '
   m_isRightToLeft: 0
@@ -3951,7 +4026,7 @@ GameObject:
   - component: {fileID: 2051146532}
   - component: {fileID: 2051146531}
   m_Layer: 5
-  m_Name: ' Value'
+  m_Name: Cleaning Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4155,7 +4230,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2051520412}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1433930065}
+        m_MethodName: feedCat
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2051520412
 MonoBehaviour:
   m_ObjectHideFlags: 0
