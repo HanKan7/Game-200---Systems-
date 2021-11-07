@@ -11,7 +11,7 @@ public class GameTracker : MonoBehaviour
     [SerializeField] int cleanliness = 10;
     [SerializeField] int playMeter = 10;
     [SerializeField] int day = 1;
-    [SerializeField] int actionPoints = 5;
+    [SerializeField] int actionPoints = 2;
 
     [Header("Text UI Attributes")]
     public TMP_Text healthValueText;
@@ -20,6 +20,10 @@ public class GameTracker : MonoBehaviour
     public TMP_Text playMeterValueText;
     public TMP_Text dayValueText;
     public TMP_Text actionPointsValueText;
+    public TMP_Text statusOfTheDayText;
+
+    [SerializeField] enum dayStatus {Morning, Afternoon, Evening};
+    [SerializeField] dayStatus statusOfTheDay;
 
 
 
@@ -33,6 +37,9 @@ public class GameTracker : MonoBehaviour
         playMeterValueText.text = playMeter.ToString();
         dayValueText.text = day.ToString();
         actionPointsValueText.text = actionPoints.ToString();
+
+        statusOfTheDay = dayStatus.Morning;
+
     }
 
     // Update is called once per frame
@@ -40,11 +47,14 @@ public class GameTracker : MonoBehaviour
     {
         
     }
+
+    #region playerTraits
     public void feedCat()
     {
         hunger++;
         hungerValueText.text = hunger.ToString();
         a_points();
+        checkStats();
     }
 
     public void cleanCat()
@@ -52,6 +62,7 @@ public class GameTracker : MonoBehaviour
         cleanliness++;
         cleanlinessValueText.text = cleanliness.ToString();
         a_points();
+        checkStats();
     }
 
     public void playWithCat()
@@ -59,12 +70,32 @@ public class GameTracker : MonoBehaviour
         playMeter++;
         playMeterValueText.text = playMeter.ToString();
         a_points();
+        checkStats();
     }
 
-    public void changeDay()
+    void decrementStats()
     {
+        hunger--;
+        cleanliness--;
+        playMeter--;
+        hungerValueText.text = hunger.ToString();
+        cleanlinessValueText.text = cleanliness.ToString();
+        playMeterValueText.text = playMeter.ToString();
+    }
+
+    #endregion
+
+
+    public void changeStatusOfTheDay()
+    {
+        statusOfTheDay = (dayStatus)((((int)statusOfTheDay) + 1) % 3);
+        statusOfTheDayText.text = statusOfTheDay.ToString();
+        if((int)statusOfTheDay == 0)
+        {
             day++;
-            dayValueText.text = day.ToString();  
+            decrementStats();
+            dayValueText.text = day.ToString();
+        }
     }
 
     public void a_points()
@@ -73,9 +104,9 @@ public class GameTracker : MonoBehaviour
         actionPoints--;
         if (actionPoints == 0)
         {
-            actionPoints = 5;
+            actionPoints = 2;
             actionPointsValueText.text = actionPoints.ToString();
-            changeDay();
+            changeStatusOfTheDay();
 
             return;
         }
@@ -84,7 +115,11 @@ public class GameTracker : MonoBehaviour
 
     void checkStats()
     {
-        //Need to know the conditions
+        if(hunger < 2 || cleanliness < 2 || playMeter < 2)
+        {
+            health--;
+            healthValueText.text = health.ToString();
+        }
 
     }
 
