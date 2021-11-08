@@ -178,7 +178,7 @@ public class GameTracker : MonoBehaviour
         randomNumberOfDaysCatGoneMissing = Random.Range(2, 6);
         day += randomNumberOfDaysCatGoneMissing;
         dayValueText.text = day.ToString();
-        narrationText.text = catGoneMissingString + " " + randomNumberOfDaysCatGoneMissing + " days. You cannot feed/play/clean your cat. Click Next to continue";
+        narrationText.text = catGoneMissingString + " " + randomNumberOfDaysCatGoneMissing + " days. You cannot feed/play/clean your creature. Click Next to continue";
         nextButton.gameObject.SetActive(true);
     }
 
