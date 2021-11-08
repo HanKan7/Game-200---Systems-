@@ -14,7 +14,7 @@ public class GameTracker : MonoBehaviour
     [SerializeField] int day = 1;
     [SerializeField] int actionPoints = 2;
 
-    int randomNumberOfDaysCatGoneMissing = 0;
+    int randomNumberOfDaysCreatureGoneMissing = 0;
     int probabilityNumber = 0;
 
     [Header("Text UI Attributes")]
@@ -34,9 +34,18 @@ public class GameTracker : MonoBehaviour
 
     [Space(10)]
     [Header("EventsText")]
-    [SerializeField] string catGoneMissingString;
+    [SerializeField] string creatureGoneMissingString;
     [SerializeField] string powerCutString;
-    [SerializeField] string catWantsToPlayString;
+    [SerializeField] string creatureWantsToPlayString;
+    [SerializeField] string creatureDoesntWantToPlayString;
+
+    [Header("Animation Objects")]
+    [SerializeField] GameObject IdleAnimationAnimationGameObject;
+    [SerializeField] GameObject WitchGoingOutAnimationGameObject;
+    [SerializeField] GameObject WitchDeathAnimationGameObject;
+    [SerializeField] GameObject FeedWitchAnimationGameObject;
+    [SerializeField] GameObject CleaningWitchAnimationGameObject;
+    [SerializeField] GameObject PlayingWithWitchAnimationGameObject;
 
     [Header("Game Buttons")]
     public Button eatButton;
@@ -46,7 +55,7 @@ public class GameTracker : MonoBehaviour
     public Button playAgainButton;
 
     [SerializeField] enum dayStatus {Morning, Afternoon, Evening};
-    [SerializeField] enum eventsInTheGame {None,CatGoneMissing,PowerCut,CatWantsToPlay};
+    [SerializeField] enum eventsInTheGame {None,CatGoneMissing,PowerCut,CreatureWantsToPlay, CreatureDoesntWantToPlay};
 
     [SerializeField] dayStatus statusOfTheDay;
     [SerializeField] eventsInTheGame events;
@@ -64,23 +73,23 @@ public class GameTracker : MonoBehaviour
         playMeterValueText.text = playMeter.ToString();
         dayValueText.text = day.ToString();
         actionPointsValueText.text = actionPoints.ToString();
+        narrationText.text = " What a lovely day!";
+
+        DisableAnimationGameObjects();
+        IdleAnimationAnimationGameObject.SetActive(true);
 
         statusOfTheDay = dayStatus.Morning;
         events = eventsInTheGame.None;      
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     #region playerTraits
     public void feedCat()
     {
-        hunger += 2;
+        hunger += 1;
         hungerValueText.text = hunger.ToString();
         narrationText.text = hungerText;
+        DisableAnimationGameObjects();
+        FeedWitchAnimationGameObject.SetActive(true);
         a_points();
         checkStats();
     }
@@ -90,6 +99,8 @@ public class GameTracker : MonoBehaviour
         cleanliness++;
         cleanlinessValueText.text = cleanliness.ToString();
         narrationText.text = cleanlinessText;
+        DisableAnimationGameObjects();
+        CleaningWitchAnimationGameObject.SetActive(true);
         a_points();
         checkStats();
     }
@@ -99,6 +110,8 @@ public class GameTracker : MonoBehaviour
         playMeter++;
         playMeterValueText.text = playMeter.ToString();
         narrationText.text = playText;
+        DisableAnimationGameObjects();
+        PlayingWithWitchAnimationGameObject.SetActive(true);
         a_points();
         checkStats();
     }
@@ -142,10 +155,11 @@ public class GameTracker : MonoBehaviour
         {
             health = 0;
             healthValueText.text = health.ToString();
-            narrationText.text = "Your creature has died, :(";
+            narrationText.text = "Your creature has died, :(";            
             DisableButtons();
             playAgainButton.gameObject.SetActive(true);
-
+            DisableAnimationGameObjects();
+            WitchDeathAnimationGameObject.SetActive(true);
         }
 
     }
@@ -159,35 +173,95 @@ public class GameTracker : MonoBehaviour
         statusOfTheDayText.text = statusOfTheDay.ToString();
         if ((int)statusOfTheDay == 0)
         {
+            EnableButtons();
+            DisableAnimationGameObjects();
+            IdleAnimationAnimationGameObject.SetActive(true);
             day++;
             decrementStats();
             dayValueText.text = day.ToString();
-            probabilityNumber = Random.Range(1, 11);
-            if(probabilityNumber <= 7)
+
+            int whichEventToOccur = Random.Range(1, 4);
+            
+            if(whichEventToOccur == 1) // Creature Goes Missing
             {
-                catGoesMissing();
+                probabilityNumber = Random.Range(1, 101);
+                if (probabilityNumber <= 40)
+                {
+                    creatureGoesMissing();
+                }
             }
+
+            else if(whichEventToOccur == 2) //Power Cut
+            {
+                probabilityNumber = Random.Range(1, 101);
+                if (probabilityNumber <= 70)
+                {
+                    powerCut();
+                }
+            }
+
+            else if(whichEventToOccur == 3) //Creature Only Wants To Play
+            {
+                probabilityNumber = Random.Range(1, 101);
+                if (probabilityNumber <= 70)
+                {
+                    creatureOnlyWantsToPlay();
+                }
+            }
+
+            else if(whichEventToOccur == 4)
+            {
+                probabilityNumber = Random.Range(1, 101);
+                if (probabilityNumber <= 70)
+                {
+                    creatureDoesNotWantToPlay();
+                }
+            }
+
+            
         }
     }
 
-    void catGoesMissing()
+    void creatureGoesMissing()
     {
         DisableButtons();
+        DisableAnimationGameObjects();
+        WitchGoingOutAnimationGameObject.SetActive(true);
         events = eventsInTheGame.CatGoneMissing;
 
-        randomNumberOfDaysCatGoneMissing = Random.Range(1, 3);
-        day += randomNumberOfDaysCatGoneMissing;
+        randomNumberOfDaysCreatureGoneMissing = Random.Range(1, 3);
+        day += randomNumberOfDaysCreatureGoneMissing;
         dayValueText.text = day.ToString();
-        narrationText.text = catGoneMissingString + " " + randomNumberOfDaysCatGoneMissing + " days. You were unable to feed, play, or clean your creature. Click Next to continue";
+        narrationText.text = creatureGoneMissingString + " " + randomNumberOfDaysCreatureGoneMissing + " days. You were unable to feed, play, or clean your creature. Click Next to continue";
         nextButton.gameObject.SetActive(true);
     }
 
+    void powerCut()
+    {
+        cleanButton.interactable = false;
+        events = eventsInTheGame.PowerCut;
+        narrationText.text = powerCutString;
+    }
+
+    void creatureOnlyWantsToPlay()
+    {
+        cleanButton.interactable = false;
+        eatButton.interactable = false;
+        events = eventsInTheGame.CreatureWantsToPlay;
+        narrationText.text = creatureWantsToPlayString;
+    }
 
 
+    void creatureDoesNotWantToPlay()
+    {
+        playAgainButton.interactable = false;
+        events = eventsInTheGame.CreatureDoesntWantToPlay;
+        narrationText.text = creatureDoesntWantToPlayString;
+    }
 
     #endregion
 
-    #region ButtonEvents
+    #region ButtonAndAnimationEvents
     private void DisableButtons()
     {
         playWithCatButton.interactable = false;
@@ -201,9 +275,20 @@ public class GameTracker : MonoBehaviour
         cleanButton.interactable = true;
     }
 
+    private void DisableAnimationGameObjects()
+    {
+        IdleAnimationAnimationGameObject.SetActive(false);
+        WitchGoingOutAnimationGameObject.SetActive(false); 
+        WitchDeathAnimationGameObject.SetActive(false); 
+        FeedWitchAnimationGameObject.SetActive(false); 
+        CleaningWitchAnimationGameObject.SetActive(false); 
+        PlayingWithWitchAnimationGameObject.SetActive(false); 
+    }
+
     public void PlayAgain()
     {
         playAgainButton.gameObject.SetActive(false);
+        narrationText.text = "";
         EnableButtons();
         health = 3;
         hunger = 5;
@@ -218,17 +303,21 @@ public class GameTracker : MonoBehaviour
         dayValueText.text = day.ToString();
         statusOfTheDay = dayStatus.Morning;
         statusOfTheDayText.text = statusOfTheDay.ToString();
+        DisableAnimationGameObjects();
+        IdleAnimationAnimationGameObject.SetActive(true);
         events = eventsInTheGame.None;
     }
 
     public void onNextButtonClicked()
     {
-        onNextButtonOnClicked(randomNumberOfDaysCatGoneMissing - 1);
+        onNextButtonOnClicked(randomNumberOfDaysCreatureGoneMissing - 1);
     }
 
     public void onNextButtonOnClicked(int randomNumberOfDaysCatGoneMissing)
     {
         events = eventsInTheGame.None;
+        DisableAnimationGameObjects();
+        IdleAnimationAnimationGameObject.SetActive(true);
         nextButton.gameObject.SetActive(false);
         narrationText.text = "Your creature has comeback with reduced stats. Please take care of it";
 
