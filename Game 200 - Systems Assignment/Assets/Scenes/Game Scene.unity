@@ -3524,11 +3524,7 @@ MonoBehaviour:
   statusOfTheDayText: {fileID: 1263648360}
   narrationText: {fileID: 90543777}
   hungerText: You used 1 action point. You fed the creature.
-<<<<<<< Updated upstream
   cleanlinessText: You used 1 action point. You took creature for a bath. The creature
-=======
-  cleanlinessText: You used 1 action point. You took creature for a bath. The cat
->>>>>>> Stashed changes
     is clean now.
   playText: You used 1 action point. You are playing with the creature now.
   catGoneMissingString: Your creature stays out all night/ goes missing for
