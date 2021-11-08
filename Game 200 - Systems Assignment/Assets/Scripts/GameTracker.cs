@@ -142,7 +142,7 @@ public class GameTracker : MonoBehaviour
         {
             health = 0;
             healthValueText.text = health.ToString();
-            narrationText.text = "Your cat has died, Sad";
+            narrationText.text = "Your creature has died, Sad";
             DisableButtons();
             playAgainButton.gameObject.SetActive(true);
 
@@ -162,11 +162,30 @@ public class GameTracker : MonoBehaviour
             day++;
             decrementStats();
             dayValueText.text = day.ToString();
-            probabilityNumber = Random.Range(1, 11);
-            if(probabilityNumber <= 7)
+
+            //Occurenece of events happening
+
+            int whichEventToHappen = Random.Range(1, 3);
+
+            if(whichEventToHappen == 1)
             {
-                catGoesMissing();
+                probabilityNumber = Random.Range(1, 11);
+                if (probabilityNumber <= 7)
+                {
+                    catGoesMissing();
+                }
             }
+
+            else if(whichEventToHappen == 2)
+            {
+                probabilityNumber = Random.Range(1, 11);
+                if (probabilityNumber <= 7)
+                {
+                    catGoesMissing();
+                }
+            }
+
+
         }
     }
 
@@ -204,18 +223,26 @@ public class GameTracker : MonoBehaviour
     public void PlayAgain()
     {
         playAgainButton.gameObject.SetActive(false);
+        narrationText.text = " ";
         EnableButtons();
+
+        //Setting up the default values
         health = 3;
         hunger = 5;
         cleanliness = 5;
         playMeter = 5;
         day = 1;
         actionPoints = 2;
+
+        //Updating the text on the screen
         healthValueText.text = health.ToString();
         hungerValueText.text = hunger.ToString();
         cleanlinessValueText.text = cleanliness.ToString();
         playMeterValueText.text = playMeter.ToString();
         dayValueText.text = day.ToString();
+        actionPointsValueText.text = actionPoints.ToString();
+
+        //Changing the status and events in the game
         statusOfTheDay = dayStatus.Morning;
         statusOfTheDayText.text = statusOfTheDay.ToString();
         events = eventsInTheGame.None;
@@ -228,9 +255,9 @@ public class GameTracker : MonoBehaviour
 
     public void onNextButtonOnClicked(int randomNumberOfDaysCatGoneMissing)
     {
-        events = eventsInTheGame.None;
+
         nextButton.gameObject.SetActive(false);
-        narrationText.text = "Your cat has comeback with reduced stats. Please take care of it";
+        narrationText.text = "Your creature has come back with reduced stats. Please take care of it";
 
         //Decrease Action Points
         hunger -= randomNumberOfDaysCatGoneMissing;
@@ -241,7 +268,7 @@ public class GameTracker : MonoBehaviour
         playMeterValueText.text = playMeter.ToString();
         EnableButtons();
         checkStats();
-
+        events = eventsInTheGame.None;
     }
     #endregion
 
