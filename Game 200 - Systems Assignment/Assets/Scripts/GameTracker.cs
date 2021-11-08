@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameTracker : MonoBehaviour
 {
     [Header("Intial attributes")]
-    [SerializeField] int health = 3;
+    [SerializeField] int health = 5;
     [SerializeField] int hunger = 10;
     [SerializeField] int cleanliness = 10;
     [SerializeField] int playMeter = 10;
@@ -78,7 +78,7 @@ public class GameTracker : MonoBehaviour
     #region playerTraits
     public void feedCat()
     {
-        hunger++;
+        hunger += 2;
         hungerValueText.text = hunger.ToString();
         narrationText.text = hungerText;
         a_points();
@@ -105,9 +105,9 @@ public class GameTracker : MonoBehaviour
 
     void decrementStats()
     {
-        hunger--;
-        cleanliness--;
-        playMeter--;
+        hunger = hunger - 2;
+        cleanliness = cleanliness - 2;
+        playMeter = playMeter - 2;
         hungerValueText.text = hunger.ToString();
         cleanlinessValueText.text = cleanliness.ToString();
         playMeterValueText.text = playMeter.ToString();
@@ -142,7 +142,7 @@ public class GameTracker : MonoBehaviour
         {
             health = 0;
             healthValueText.text = health.ToString();
-            narrationText.text = "Your cat has died, Sad";
+            narrationText.text = "Your creature has died, :(";
             DisableButtons();
             playAgainButton.gameObject.SetActive(true);
 
@@ -175,10 +175,10 @@ public class GameTracker : MonoBehaviour
         DisableButtons();
         events = eventsInTheGame.CatGoneMissing;
 
-        randomNumberOfDaysCatGoneMissing = Random.Range(2, 6);
+        randomNumberOfDaysCatGoneMissing = Random.Range(1, 3);
         day += randomNumberOfDaysCatGoneMissing;
         dayValueText.text = day.ToString();
-        narrationText.text = catGoneMissingString + " " + randomNumberOfDaysCatGoneMissing + " days. You cannot feed/play/clean your creature. Click Next to continue";
+        narrationText.text = catGoneMissingString + " " + randomNumberOfDaysCatGoneMissing + " days. You were unable to feed, play, or clean your creature. Click Next to continue";
         nextButton.gameObject.SetActive(true);
     }
 
@@ -230,7 +230,7 @@ public class GameTracker : MonoBehaviour
     {
         events = eventsInTheGame.None;
         nextButton.gameObject.SetActive(false);
-        narrationText.text = "Your cat has comeback with reduced stats. Please take care of it";
+        narrationText.text = "Your creature has comeback with reduced stats. Please take care of it";
 
         //Decrease Action Points
         hunger -= randomNumberOfDaysCatGoneMissing;
