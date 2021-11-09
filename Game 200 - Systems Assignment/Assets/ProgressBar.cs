@@ -11,12 +11,20 @@ public class ProgressBar : MonoBehaviour
     public float fillspeed = .5f;
     private float targetprogress = 0;
     public GameObject lvltext;
-    private int lvl = 0;
+    public int lvl = 1;
 
     private void levelup()
     {
         lvl++;
         lvltext.GetComponent<UnityEngine.UI.Text>().text = "Lvl " + lvl.ToString();
+    }
+
+    public void Reset()
+    {
+        lvl = 1;
+        lvltext.GetComponent<UnityEngine.UI.Text>().text = "Lvl " + lvl.ToString();
+        targetprogress = 0;
+        slider.value = 0;
     }
     private void Awake()
     {
@@ -30,7 +38,8 @@ public class ProgressBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        lvltext.GetComponent<UnityEngine.UI.Text>().text = "Lvl " + lvl.ToString();
+        targetprogress = 9;
     }
 
     // Update is called once per frame
@@ -40,7 +49,7 @@ public class ProgressBar : MonoBehaviour
         {
             slider.value += fillspeed * Time.deltaTime;
         }
-        if (slider.value >= 1)
+        if (slider.value >= 1 || targetprogress >= .9)
         {
             levelup();
             slider.value = 0;

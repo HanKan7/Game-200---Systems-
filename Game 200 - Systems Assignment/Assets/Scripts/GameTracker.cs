@@ -5,11 +5,6 @@ using TMPro;
 using UnityEngine.UI;
 
 
-
-
-
-
-
 public class GameTracker : MonoBehaviour
 {
     [Header("Intial attributes")]
@@ -23,6 +18,8 @@ public class GameTracker : MonoBehaviour
 
     int randomNumberOfDaysCreatureGoneMissing = 0;
     int probabilityNumber = 0;
+    bool egg = true;
+    int lastevent;
 
     [Header("Text UI Attributes")]
     public TMP_Text healthValueText;
@@ -47,6 +44,8 @@ public class GameTracker : MonoBehaviour
     [SerializeField] string creatureDoesntWantToPlayString;
 
     [Header("Animation Objects")]
+    [SerializeField] GameObject IdleAnimationEggGameObject;
+    [SerializeField] GameObject EggDeadAnimationGameObject;
     [SerializeField] GameObject IdleAnimationAnimationGameObject;
     [SerializeField] GameObject WitchGoingOutAnimationGameObject;
     [SerializeField] GameObject WitchDeathAnimationGameObject;
@@ -81,10 +80,10 @@ public class GameTracker : MonoBehaviour
         playMeterValueText.text = playMeter.ToString();
         dayValueText.text = day.ToString();
         actionPointsValueText.text = actionPoints.ToString();
-        narrationText.text = " What a lovely day!";
+        narrationText.text = "You have found an egg, What a lovely day!";
 
         DisableAnimationGameObjects();
-        IdleAnimationAnimationGameObject.SetActive(true);
+        IdleAnimationEggGameObject.SetActive(true);
 
         statusOfTheDay = dayStatus.Morning;
         events = eventsInTheGame.None;      
@@ -169,11 +168,18 @@ public class GameTracker : MonoBehaviour
             healthValueText.text = health.ToString();
             narrationText.text = "Your creature has died, :(";            
             DisableButtons();
+            progressbar.GetComponent<ProgressBar>().Reset();
             playAgainButton.gameObject.SetActive(true);
             DisableAnimationGameObjects();
-            WitchDeathAnimationGameObject.SetActive(true);
+            if(egg == true)
+            {
+                EggDeadAnimationGameObject.SetActive(true);
+            }
+            else
+            {
+                WitchDeathAnimationGameObject.SetActive(true);
+            }  
         }
-
     }
 
     #endregion
@@ -187,24 +193,39 @@ public class GameTracker : MonoBehaviour
         {
             EnableButtons();
             DisableAnimationGameObjects();
-            IdleAnimationAnimationGameObject.SetActive(true);
+            if(egg == true)
+            {
+                IdleAnimationEggGameObject.SetActive(true);
+            }
+            else
+            {
+                IdleAnimationAnimationGameObject.SetActive(true);
+            }
+            
             day++;
             decrementStats();
             progressbar.GetComponent<ProgressBar>().incrementProgress(.25f);
+            if (progressbar.GetComponent<ProgressBar>().lvl == 2)
+            {
+                egg = false;
+                IdleAnimationEggGameObject.SetActive(false);
+                IdleAnimationAnimationGameObject.SetActive(true);
+                narrationText.text = "Your egg has hatched!";
+            }
             dayValueText.text = day.ToString();
 
             int whichEventToOccur = Random.Range(1, 4);
             
-            if(whichEventToOccur == 1) // Creature Goes Missing
+            if(whichEventToOccur == 1 && egg == false && lastevent != whichEventToOccur) // Creature Goes Missing
             {
                 probabilityNumber = Random.Range(1, 101);
-                if (probabilityNumber <= 40)
+                if (probabilityNumber <= 30)
                 {
                     creatureGoesMissing();
                 }
             }
 
-            else if(whichEventToOccur == 2) //Power Cut
+            else if(whichEventToOccur == 2 && egg == false && lastevent != whichEventToOccur) //Power Cut
             {
                 probabilityNumber = Random.Range(1, 101);
                 if (probabilityNumber <= 70)
@@ -213,7 +234,7 @@ public class GameTracker : MonoBehaviour
                 }
             }
 
-            else if(whichEventToOccur == 3) //Creature Only Wants To Play
+            else if(whichEventToOccur == 3 && egg == false && lastevent != whichEventToOccur) //Creature Only Wants To Play
             {
                 probabilityNumber = Random.Range(1, 101);
                 if (probabilityNumber <= 70)
@@ -222,7 +243,7 @@ public class GameTracker : MonoBehaviour
                 }
             }
 
-            else if(whichEventToOccur == 4)
+            else if(whichEventToOccur == 4 && egg == false && lastevent != whichEventToOccur)
             {
                 probabilityNumber = Random.Range(1, 101);
                 if (probabilityNumber <= 70)
@@ -231,6 +252,7 @@ public class GameTracker : MonoBehaviour
                 }
             }
 
+            lastevent = whichEventToOccur;
             
         }
     }
@@ -290,6 +312,8 @@ public class GameTracker : MonoBehaviour
 
     private void DisableAnimationGameObjects()
     {
+        IdleAnimationEggGameObject.SetActive(false);
+        EggDeadAnimationGameObject.SetActive(false);
         IdleAnimationAnimationGameObject.SetActive(false);
         WitchGoingOutAnimationGameObject.SetActive(false); 
         WitchDeathAnimationGameObject.SetActive(false); 
@@ -317,7 +341,8 @@ public class GameTracker : MonoBehaviour
         statusOfTheDay = dayStatus.Morning;
         statusOfTheDayText.text = statusOfTheDay.ToString();
         DisableAnimationGameObjects();
-        IdleAnimationAnimationGameObject.SetActive(true);
+        IdleAnimationEggGameObject.SetActive(true);
+        egg = true;
         events = eventsInTheGame.None;
     }
 
