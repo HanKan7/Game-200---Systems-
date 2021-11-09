@@ -19,6 +19,7 @@ public class GameTracker : MonoBehaviour
     [SerializeField] int playMeter = 10;
     [SerializeField] int day = 1;
     [SerializeField] int actionPoints = 2;
+    [SerializeField] GameObject progressbar;
 
     int randomNumberOfDaysCreatureGoneMissing = 0;
     int probabilityNumber = 0;
@@ -93,7 +94,7 @@ public class GameTracker : MonoBehaviour
     public void feedCat()
     {
         audioService.PlayFood();
-        hunger += 1;
+        hunger += 2;
         hungerValueText.text = hunger.ToString();
         narrationText.text = hungerText;
         DisableAnimationGameObjects();
@@ -105,7 +106,7 @@ public class GameTracker : MonoBehaviour
     public void cleanCat()
     {
         audioService.PlayBath();
-        cleanliness++;
+        cleanliness += 2;
         cleanlinessValueText.text = cleanliness.ToString();
         narrationText.text = cleanlinessText;
         DisableAnimationGameObjects();
@@ -117,7 +118,7 @@ public class GameTracker : MonoBehaviour
     public void playWithCat()
     {
         audioService.PlayPlay();
-        playMeter++;
+        playMeter += 2;
         playMeterValueText.text = playMeter.ToString();
         narrationText.text = playText;
         DisableAnimationGameObjects();
@@ -144,7 +145,7 @@ public class GameTracker : MonoBehaviour
         actionPoints--;
         if (actionPoints == 0)
         {
-            actionPoints = 2;
+            actionPoints = 1;
             actionPointsValueText.text = actionPoints.ToString();
             changeStatusOfTheDay();
 
@@ -189,6 +190,7 @@ public class GameTracker : MonoBehaviour
             IdleAnimationAnimationGameObject.SetActive(true);
             day++;
             decrementStats();
+            progressbar.GetComponent<ProgressBar>().incrementProgress(.25f);
             dayValueText.text = day.ToString();
 
             int whichEventToOccur = Random.Range(1, 4);
