@@ -1,49 +1,79 @@
 fileFormatVersion: 2
-guid: da5d353c884bf4087861efa522e60d05
+guid: 689335c75a79e42a4bdd757e72e7883b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7389621663473875911
-    second: cleaning animation_0
+      213: -2924154996811204928
+    second: book animation_0
   - first:
-      213: -833407558164990600
-    second: cleaning animation_1
+      213: -1700392516602085931
+    second: book animation_1
   - first:
-      213: 4414939899918410087
-    second: cleaning animation_2
+      213: 8874191307522757233
+    second: book animation_2
   - first:
-      213: 1010538761167838144
-    second: cleaning animation_3
+      213: 8831759784618222385
+    second: book animation_3
   - first:
-      213: -668223379203148027
-    second: cleaning animation_4
+      213: 8532363952760290191
+    second: book animation_4
   - first:
-      213: 4626619737336764517
-    second: cleaning animation_5
+      213: -1501870693180258111
+    second: book animation_5
   - first:
-      213: 627749876376245474
-    second: cleaning animation_6
+      213: 7361132131253134033
+    second: book animation_6
   - first:
-      213: 8628922453362114530
-    second: cleaning animation_0
+      213: -1340430049407411692
+    second: book animation_7
   - first:
-      213: -3552581414607164560
-    second: cleaning animation_1
+      213: 5637937136851931382
+    second: book animation_8
   - first:
-      213: 7011489091670303285
-    second: cleaning animation_2
+      213: -8372681650544415233
+    second: book animation_9
   - first:
-      213: -5864275863363335563
-    second: cleaning animation_3
+      213: -5816644522991561668
+    second: book animation_10
   - first:
-      213: -1429363588929708651
-    second: cleaning animation_4
+      213: 3371818719866274514
+    second: book animation_11
   - first:
-      213: 8819218901982367776
-    second: cleaning animation_5
+      213: -8587002115283569163
+    second: book animation_0
   - first:
-      213: -4516446571591388483
-    second: cleaning animation_6
+      213: 4439052185332464461
+    second: book animation_1
+  - first:
+      213: -7523440522780993714
+    second: book animation_2
+  - first:
+      213: -1261949835302626059
+    second: book animation_3
+  - first:
+      213: -1498551248618850498
+    second: book animation_4
+  - first:
+      213: 3565670800233923345
+    second: book animation_5
+  - first:
+      213: -8816575582352215986
+    second: book animation_6
+  - first:
+      213: 981696501860884554
+    second: book animation_7
+  - first:
+      213: -3070884948933505515
+    second: book animation_8
+  - first:
+      213: 3965393086587789049
+    second: book animation_9
+  - first:
+      213: 9150080039709487508
+    second: book animation_10
+  - first:
+      213: 9024072271794961511
+    second: book animation_11
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -153,13 +183,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cleaning animation_0
+      name: book animation_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
-        height: 780
+        width: 192
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +197,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ef7a0bd04710c770800000000000000
-      internalID: 8628922453362114530
+      spriteID: 5f5bef07217d4d880800000000000000
+      internalID: -8587002115283569163
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_1
+      name: book animation_1
       rect:
         serializedVersion: 2
-        x: 800
+        x: 192
         y: 0
-        width: 800
-        height: 780
+        width: 192
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07b6faa9602b2bec0800000000000000
-      internalID: -3552581414607164560
+      spriteID: d4bb926817eaa9d30800000000000000
+      internalID: 4439052185332464461
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_2
+      name: book animation_2
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 384
         y: 0
-        width: 800
-        height: 780
+        width: 192
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +239,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 532e88f2e20dd4160800000000000000
-      internalID: 7011489091670303285
+      spriteID: e471cd694be579790800000000000000
+      internalID: -7523440522780993714
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_3
+      name: book animation_3
       rect:
         serializedVersion: 2
-        x: 2400
+        x: 576
         y: 0
-        width: 800
-        height: 780
+        width: 192
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,20 +260,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57ac45b2c28ed9ea0800000000000000
-      internalID: -5864275863363335563
+      spriteID: 5fc9c669f47ac7ee0800000000000000
+      internalID: -1261949835302626059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_4
+      name: book animation_4
       rect:
         serializedVersion: 2
-        x: 3200
+        x: 768
         y: 0
-        width: 800
-        height: 780
+        width: 192
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,20 +281,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59d97f29361e92ce0800000000000000
-      internalID: -1429363588929708651
+      spriteID: e37fa5c3493143be0800000000000000
+      internalID: -1498551248618850498
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_5
+      name: book animation_5
       rect:
         serializedVersion: 2
-        x: 4000
+        x: 960
         y: 0
-        width: 800
-        height: 780
+        width: 192
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 020d1197dd8246a70800000000000000
-      internalID: 8819218901982367776
+      spriteID: 1130de973becb7130800000000000000
+      internalID: 3565670800233923345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_6
+      name: book animation_6
       rect:
         serializedVersion: 2
-        x: 4800
+        x: 1152
         y: 0
-        width: 800
-        height: 780
+        width: 192
+        height: 108
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,8 +323,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db2b345b5cb5251c0800000000000000
-      internalID: -4516446571591388483
+      spriteID: e407386583b35a580800000000000000
+      internalID: -8816575582352215986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: book animation_7
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4069a664cfaf9d00800000000000000
+      internalID: 981696501860884554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: book animation_8
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51e89b0c8660265d0800000000000000
+      internalID: -3070884948933505515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: book animation_9
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fedad0b008e70730800000000000000
+      internalID: 3965393086587789049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: book animation_10
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491b641215d9bfe70800000000000000
+      internalID: 9150080039709487508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: book animation_11
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c7acb6be1fb3d70800000000000000
+      internalID: 9024072271794961511
       vertices: []
       indices: 
       edges: []
@@ -302,7 +437,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: de5471e9b10fa4fbfabaa8403b9825b1
+    spriteID: b78a0caeb277d4833ace470d682d80a5
     internalID: 0
     vertices: []
     indices: 

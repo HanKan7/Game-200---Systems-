@@ -1,49 +1,19 @@
 fileFormatVersion: 2
-guid: da5d353c884bf4087861efa522e60d05
+guid: a6e594a4297664c688a6c689789f9815
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7389621663473875911
-    second: cleaning animation_0
+      213: 4671798650995003305
+    second: egg idling animation _0
   - first:
-      213: -833407558164990600
-    second: cleaning animation_1
+      213: 231582686471961176
+    second: egg idling animation _1
   - first:
-      213: 4414939899918410087
-    second: cleaning animation_2
+      213: 4639822388155595701
+    second: egg idling animation _2
   - first:
-      213: 1010538761167838144
-    second: cleaning animation_3
-  - first:
-      213: -668223379203148027
-    second: cleaning animation_4
-  - first:
-      213: 4626619737336764517
-    second: cleaning animation_5
-  - first:
-      213: 627749876376245474
-    second: cleaning animation_6
-  - first:
-      213: 8628922453362114530
-    second: cleaning animation_0
-  - first:
-      213: -3552581414607164560
-    second: cleaning animation_1
-  - first:
-      213: 7011489091670303285
-    second: cleaning animation_2
-  - first:
-      213: -5864275863363335563
-    second: cleaning animation_3
-  - first:
-      213: -1429363588929708651
-    second: cleaning animation_4
-  - first:
-      213: 8819218901982367776
-    second: cleaning animation_5
-  - first:
-      213: -4516446571591388483
-    second: cleaning animation_6
+      213: 8488342004438729557
+    second: egg idling animation _3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -153,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cleaning animation_0
+      name: egg idling animation _0
       rect:
         serializedVersion: 2
         x: 0
@@ -167,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ef7a0bd04710c770800000000000000
-      internalID: 8628922453362114530
+      spriteID: 9afc4beee1095d040800000000000000
+      internalID: 4671798650995003305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_1
+      name: egg idling animation _1
       rect:
         serializedVersion: 2
         x: 800
@@ -188,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07b6faa9602b2bec0800000000000000
-      internalID: -3552581414607164560
+      spriteID: 85aba43f93fb63300800000000000000
+      internalID: 231582686471961176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_2
+      name: egg idling animation _2
       rect:
         serializedVersion: 2
         x: 1600
@@ -209,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 532e88f2e20dd4160800000000000000
-      internalID: 7011489091670303285
+      spriteID: 5bb3be211e5f36040800000000000000
+      internalID: 4639822388155595701
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_3
+      name: egg idling animation _3
       rect:
         serializedVersion: 2
         x: 2400
@@ -230,71 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57ac45b2c28ed9ea0800000000000000
-      internalID: -5864275863363335563
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cleaning animation_4
-      rect:
-        serializedVersion: 2
-        x: 3200
-        y: 0
-        width: 800
-        height: 780
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59d97f29361e92ce0800000000000000
-      internalID: -1429363588929708651
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cleaning animation_5
-      rect:
-        serializedVersion: 2
-        x: 4000
-        y: 0
-        width: 800
-        height: 780
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 020d1197dd8246a70800000000000000
-      internalID: 8819218901982367776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cleaning animation_6
-      rect:
-        serializedVersion: 2
-        x: 4800
-        y: 0
-        width: 800
-        height: 780
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db2b345b5cb5251c0800000000000000
-      internalID: -4516446571591388483
+      spriteID: 55309927416acc570800000000000000
+      internalID: 8488342004438729557
       vertices: []
       indices: 
       edges: []
@@ -302,7 +209,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: de5471e9b10fa4fbfabaa8403b9825b1
+    spriteID: d1cf7da7cc69940ed9b8210d7f716ed6
     internalID: 0
     vertices: []
     indices: 

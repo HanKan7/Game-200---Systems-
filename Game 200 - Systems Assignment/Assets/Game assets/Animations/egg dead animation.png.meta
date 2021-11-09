@@ -1,49 +1,25 @@
 fileFormatVersion: 2
-guid: da5d353c884bf4087861efa522e60d05
+guid: faaf23b4cc11c4a1cbf12fd0a2cd625b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7389621663473875911
-    second: cleaning animation_0
+      213: -7645369495875628000
+    second: egg dead animation_0
   - first:
-      213: -833407558164990600
-    second: cleaning animation_1
+      213: -9174645166582709157
+    second: egg dead animation_1
   - first:
-      213: 4414939899918410087
-    second: cleaning animation_2
+      213: -3461816264395761489
+    second: egg dead animation_2
   - first:
-      213: 1010538761167838144
-    second: cleaning animation_3
+      213: -6220454836822753599
+    second: egg dead animation_3
   - first:
-      213: -668223379203148027
-    second: cleaning animation_4
+      213: 4915215980269524634
+    second: egg dead animation_4
   - first:
-      213: 4626619737336764517
-    second: cleaning animation_5
-  - first:
-      213: 627749876376245474
-    second: cleaning animation_6
-  - first:
-      213: 8628922453362114530
-    second: cleaning animation_0
-  - first:
-      213: -3552581414607164560
-    second: cleaning animation_1
-  - first:
-      213: 7011489091670303285
-    second: cleaning animation_2
-  - first:
-      213: -5864275863363335563
-    second: cleaning animation_3
-  - first:
-      213: -1429363588929708651
-    second: cleaning animation_4
-  - first:
-      213: 8819218901982367776
-    second: cleaning animation_5
-  - first:
-      213: -4516446571591388483
-    second: cleaning animation_6
+      213: 4818090931605946111
+    second: egg dead animation_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -153,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: cleaning animation_0
+      name: egg dead animation_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 800
-        height: 780
+        width: 780
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,20 +143,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ef7a0bd04710c770800000000000000
-      internalID: 8628922453362114530
+      spriteID: 024d9bd43f036e590800000000000000
+      internalID: -7645369495875628000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_1
+      name: egg dead animation_1
       rect:
         serializedVersion: 2
-        x: 800
+        x: 780
         y: 0
-        width: 800
-        height: 780
+        width: 780
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -188,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07b6faa9602b2bec0800000000000000
-      internalID: -3552581414607164560
+      spriteID: b54459194dc1da080800000000000000
+      internalID: -9174645166582709157
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_2
+      name: egg dead animation_2
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 1560
         y: 0
-        width: 800
-        height: 780
+        width: 780
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -209,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 532e88f2e20dd4160800000000000000
-      internalID: 7011489091670303285
+      spriteID: fa85503f27825ffc0800000000000000
+      internalID: -3461816264395761489
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_3
+      name: egg dead animation_3
       rect:
         serializedVersion: 2
-        x: 2400
+        x: 2340
         y: 0
-        width: 800
-        height: 780
+        width: 780
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -230,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57ac45b2c28ed9ea0800000000000000
-      internalID: -5864275863363335563
+      spriteID: 1ceb1d588418ca9a0800000000000000
+      internalID: -6220454836822753599
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_4
+      name: egg dead animation_4
       rect:
         serializedVersion: 2
-        x: 3200
+        x: 3120
         y: 0
-        width: 800
-        height: 780
+        width: 780
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -251,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59d97f29361e92ce0800000000000000
-      internalID: -1429363588929708651
+      spriteID: a96d94264ea563440800000000000000
+      internalID: 4915215980269524634
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: cleaning animation_5
+      name: egg dead animation_5
       rect:
         serializedVersion: 2
-        x: 4000
+        x: 3900
         y: 0
-        width: 800
-        height: 780
+        width: 780
+        height: 800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -272,29 +248,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 020d1197dd8246a70800000000000000
-      internalID: 8819218901982367776
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cleaning animation_6
-      rect:
-        serializedVersion: 2
-        x: 4800
-        y: 0
-        width: 800
-        height: 780
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db2b345b5cb5251c0800000000000000
-      internalID: -4516446571591388483
+      spriteID: ffe37e9cc2c4dd240800000000000000
+      internalID: 4818090931605946111
       vertices: []
       indices: 
       edges: []
@@ -302,7 +257,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: de5471e9b10fa4fbfabaa8403b9825b1
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
