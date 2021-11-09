@@ -134,8 +134,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 320
+        width: 800
+        height: 780
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: feeding animation _1
       rect:
         serializedVersion: 2
-        x: 320
+        x: 800
         y: 0
-        width: 320
-        height: 320
+        width: 800
+        height: 780
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,10 +174,10 @@ TextureImporter:
       name: feeding animation _2
       rect:
         serializedVersion: 2
-        x: 640
+        x: 1600
         y: 0
-        width: 320
-        height: 320
+        width: 800
+        height: 780
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,10 +195,10 @@ TextureImporter:
       name: feeding animation _3
       rect:
         serializedVersion: 2
-        x: 960
+        x: 2400
         y: 0
-        width: 320
-        height: 320
+        width: 800
+        height: 780
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,10 +216,10 @@ TextureImporter:
       name: feeding animation _4
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 3200
         y: 0
-        width: 320
-        height: 320
+        width: 800
+        height: 780
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,10 +237,10 @@ TextureImporter:
       name: feeding animation _5
       rect:
         serializedVersion: 2
-        x: 1600
+        x: 4000
         y: 0
-        width: 320
-        height: 320
+        width: 800
+        height: 780
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,7 +257,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1b6dc264e4ff14ffcb261b1895abf863
+    spriteID: e1696f6f93577463c848cbb2219c9c48
     internalID: 0
     vertices: []
     indices: 
