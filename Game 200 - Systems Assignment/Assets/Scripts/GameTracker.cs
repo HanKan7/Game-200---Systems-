@@ -4,6 +4,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+
+
+
+
+
+
 public class GameTracker : MonoBehaviour
 {
     [Header("Intial attributes")]
@@ -60,6 +66,7 @@ public class GameTracker : MonoBehaviour
     [SerializeField] dayStatus statusOfTheDay;
     [SerializeField] eventsInTheGame events;
 
+    public AudioService audioService;
 
 
 
@@ -85,6 +92,7 @@ public class GameTracker : MonoBehaviour
     #region playerTraits
     public void feedCat()
     {
+        audioService.PlayFood();
         hunger += 1;
         hungerValueText.text = hunger.ToString();
         narrationText.text = hungerText;
@@ -96,6 +104,7 @@ public class GameTracker : MonoBehaviour
 
     public void cleanCat()
     {
+        audioService.PlayBath();
         cleanliness++;
         cleanlinessValueText.text = cleanliness.ToString();
         narrationText.text = cleanlinessText;
@@ -107,6 +116,7 @@ public class GameTracker : MonoBehaviour
 
     public void playWithCat()
     {
+        audioService.PlayPlay();
         playMeter++;
         playMeterValueText.text = playMeter.ToString();
         narrationText.text = playText;
@@ -118,6 +128,7 @@ public class GameTracker : MonoBehaviour
 
     void decrementStats()
     {
+        
         hunger = hunger - 2;
         cleanliness = cleanliness - 2;
         playMeter = playMeter - 2;

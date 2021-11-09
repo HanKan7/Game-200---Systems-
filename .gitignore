@@ -1,3 +1,6 @@
 
 Game 200 - Systems Assignment/.DS_Store
 .DS_Store
+*.dylib
+*.dll
+Game 200 - Systems Assignment/Game200Build.app/*
